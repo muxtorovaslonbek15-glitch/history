@@ -2,8 +2,8 @@ import * as db from '@/lib/db';
 import { isSelfHostedMode } from '@/lib/local-db/local-auth';
 import { saveChatMessages } from '@/lib/db';
 
-// Vercel Pro plan allows up to 800s (13.3 minutes)
-export const maxDuration = 800;
+// Vercel Hobby plan allows max 300s (5 minutes)
+export const maxDuration = 300;
 
 // Valyu OAuth Proxy configuration - uses /deepresearch endpoint
 const VALYU_APP_URL = process.env.VALYU_APP_URL || 'https://platform.valyu.ai';
