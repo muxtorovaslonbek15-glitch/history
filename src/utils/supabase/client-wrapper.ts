@@ -9,7 +9,8 @@ import { createClient as createSupabaseClient } from './client';
 const DEV_USER_ID = "dev-user-00000000-0000-0000-0000-000000000000";
 const DEV_USER_EMAIL = "dev@localhost";
 
-const isSelfHosted = () => process.env.NEXT_PUBLIC_APP_MODE === 'self-hosted';
+// Auth/signup disabled: always use the local mock client (no Supabase needed)
+const isSelfHosted = () => true;
 
 // Mock auth object for self-hosted mode
 const createDevAuth = () => ({
