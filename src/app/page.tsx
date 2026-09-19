@@ -38,7 +38,8 @@ function HomeContent() {
 
   // Check if user is signed in with Valyu
   const isSignedIn = !!user && !!valyuAccessToken;
-  const isSelfHosted = process.env.NEXT_PUBLIC_APP_MODE === 'self-hosted';
+  // Auth/signup disabled: never ask the user to sign in
+  const isSelfHosted = true;
 
   // Handle URL messages from auth callbacks
   useEffect(() => {
