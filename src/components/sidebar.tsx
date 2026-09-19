@@ -62,7 +62,8 @@ export function Sidebar({
   const router = useRouter();
   const pathname = usePathname();
   const queryClient = useQueryClient();
-  const isSelfHosted = process.env.NEXT_PUBLIC_APP_MODE === 'self-hosted';
+  // Auth/signup disabled
+  const isSelfHosted = true;
 
   // Keep dock open by default for everyone
   const [isOpen, setIsOpen] = useState(true);
