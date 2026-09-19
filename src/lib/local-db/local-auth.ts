@@ -30,5 +30,6 @@ export function getDevUser() {
 
 // Check if we're in self-hosted mode (defaults to true if not explicitly set to "valyu")
 export function isSelfHostedMode(): boolean {
-  return process.env.NEXT_PUBLIC_APP_MODE !== "valyu";
+  // Auth/signup disabled: always run in self-hosted (no login) mode
+  return true;
 }

@@ -13,8 +13,11 @@ export const DEV_USER_EMAIL = "dev@localhost";
 export function getLocalDb() {
   if (db) return db;
 
-  // Create .local-data directory if it doesn't exist
-  const dataDir = path.join(process.cwd(), ".local-data");
+  // Create data directory if it doesn't exist.
+  // On Vercel the project dir is read-only, so use /tmp there.
+  const dataDir = process.env.VERCEL
+    ? "/tmp/.local-data"
+    : path.join(process.cwd(), ".local-data");
   if (!fs.existsSync(dataDir)) {
     fs.mkdirSync(dataDir, { recursive: true });
   }
