@@ -68,7 +68,7 @@ export function SettingsModal({ open, onClose }: SettingsModalProps) {
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="max-w-md w-[92vw]">
         <DialogHeader>
-          <DialogTitle className="text-base sm:text-lg">Account Settings</DialogTitle>
+          <DialogTitle className="text-base sm:text-lg">Hisob sozlamalari</DialogTitle>
         </DialogHeader>
 
         <div className="space-y-4 sm:space-y-6">
@@ -91,7 +91,7 @@ export function SettingsModal({ open, onClose }: SettingsModalProps) {
             <div className="flex items-center gap-1.5 sm:gap-2">
               <Monitor className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-gray-500 flex-shrink-0" />
               <label className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
-                Theme
+                Mavzu
               </label>
             </div>
             <ThemeSelector />
@@ -101,7 +101,7 @@ export function SettingsModal({ open, onClose }: SettingsModalProps) {
           <form onSubmit={handleEmailUpdate} className="space-y-3 sm:space-y-4">
             <div>
               <label className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5 sm:mb-2 block">
-                Change Email Address
+                Elektron pochtani oʻzgartirish
               </label>
               <div className="relative">
                 <Mail className="absolute left-2.5 sm:left-3 top-2.5 sm:top-3 h-3.5 w-3.5 sm:h-4 sm:w-4 text-gray-400" />
@@ -109,7 +109,7 @@ export function SettingsModal({ open, onClose }: SettingsModalProps) {
                   type="email"
                   value={newEmail}
                   onChange={(e) => setNewEmail(e.target.value)}
-                  placeholder="Enter new email address"
+                  placeholder="Yangi elektron pochta manzilini kiriting"
                   className="pl-8 sm:pl-10 text-xs sm:text-sm min-h-11"
                   required
                 />
@@ -138,7 +138,7 @@ export function SettingsModal({ open, onClose }: SettingsModalProps) {
                 onClick={onClose}
                 className="flex-1 min-h-11 text-xs sm:text-sm"
               >
-                Cancel
+                Bekor qilish
               </Button>
               <Button
                 type="submit"
@@ -151,8 +151,7 @@ export function SettingsModal({ open, onClose }: SettingsModalProps) {
           </form>
 
           <div className="text-[10px] sm:text-xs text-gray-500 p-2.5 sm:p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-            <strong>Note:</strong> You&apos;ll receive confirmation emails at both your current and new email addresses.
-            You must confirm the change from both addresses for security.
+            <strong>Eslatma:</strong> Joriy va yangi elektron pochta manzillaringizga tasdiqlash xatlari yuboriladi. Xavfsizlik uchun oʻzgarishni ikkala manzildan ham tasdiqlashingiz kerak.
           </div>
         </div>
       </DialogContent>
