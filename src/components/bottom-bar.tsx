@@ -6,7 +6,7 @@ import { Menu, X, LogIn, UserPlus, User, Settings, CreditCard, History as Histor
 import { useAuthStore } from "@/lib/stores/use-auth-store";
 import { Button } from "./ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import SocialLinks from "./social-links";
+import EduSatPromo from "./edusat-promo";
 
 interface BottomBarProps {
   onShowAuth?: () => void;
@@ -84,7 +84,7 @@ const BottomBar = ({ onShowAuth, onShowSettings, onShowSubscription, onShowHisto
                     className="w-full justify-start gap-2 h-10"
                   >
                     <HistoryIcon className="h-4 w-4" />
-                    <span className="text-sm">History</span>
+                    <span className="text-sm">Tarix</span>
                   </Button>
 
                   <Button
@@ -97,7 +97,7 @@ const BottomBar = ({ onShowAuth, onShowSettings, onShowSubscription, onShowHisto
                     className="w-full justify-start gap-2 h-10"
                   >
                     <CreditCard className="h-4 w-4" />
-                    <span className="text-sm">Subscription</span>
+                    <span className="text-sm">Obuna</span>
                   </Button>
 
                   <Button
@@ -110,7 +110,7 @@ const BottomBar = ({ onShowAuth, onShowSettings, onShowSubscription, onShowHisto
                     className="w-full justify-start gap-2 h-10"
                   >
                     <Settings className="h-4 w-4" />
-                    <span className="text-sm">Settings</span>
+                    <span className="text-sm">Sozlamalar</span>
                   </Button>
 
                   <div className="border-t mt-2 pt-2">
@@ -121,7 +121,7 @@ const BottomBar = ({ onShowAuth, onShowSettings, onShowSubscription, onShowHisto
                       className="w-full justify-start gap-2 h-10 text-destructive hover:text-destructive"
                     >
                       <LogOut className="h-4 w-4" />
-                      <span className="text-sm">Sign Out</span>
+                      <span className="text-sm">Chiqish</span>
                     </Button>
                   </div>
                 </>
@@ -137,7 +137,7 @@ const BottomBar = ({ onShowAuth, onShowSettings, onShowSubscription, onShowHisto
                     className="w-full justify-start gap-2 h-10"
                   >
                     <LogIn className="h-4 w-4" />
-                    <span className="text-sm">Sign In</span>
+                    <span className="text-sm">Kirish</span>
                   </Button>
 
                   <Button
@@ -150,7 +150,7 @@ const BottomBar = ({ onShowAuth, onShowSettings, onShowSubscription, onShowHisto
                     className="w-full justify-start gap-2 h-10 mt-1"
                   >
                     <UserPlus className="h-4 w-4" />
-                    <span className="text-sm">Sign Up</span>
+                    <span className="text-sm">Roʻyxatdan oʻtish</span>
                   </Button>
                 </>
               )}
@@ -159,15 +159,15 @@ const BottomBar = ({ onShowAuth, onShowSettings, onShowSubscription, onShowHisto
         )}
       </AnimatePresence>
 
-      {/* Bottom Right - Social Links - Always visible on desktop, hidden on mobile */}
+      {/* Bottom Right - EduSAT Academy - Always visible on desktop, hidden on mobile */}
       <motion.div
         className="fixed bottom-7 sm:bottom-9 right-2 sm:right-4 z-30 transition-opacity duration-300 hidden sm:flex flex-col items-end gap-3"
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1, duration: 0.5, ease: "easeOut" }}
       >
-        {/* Social Links */}
-        <SocialLinks />
+        {/* EduSAT Academy reklamasi */}
+        <EduSatPromo />
       </motion.div>
     </>
   );

@@ -64,7 +64,7 @@ export const Globe = forwardRef<GlobeRef, GlobeProps>(function Globe({ onLocatio
     const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
 
     if (!mapboxToken) {
-      setError('Mapbox access token is not configured');
+      setError('Mapbox kirish tokeni sozlanmagan');
       setIsLoading(false);
       return;
     }
@@ -382,10 +382,10 @@ export const Globe = forwardRef<GlobeRef, GlobeProps>(function Globe({ onLocatio
     return (
       <div className="w-full h-full flex items-center justify-center bg-muted">
         <div className="text-center">
-          <h3 className="text-lg font-semibold text-destructive mb-2">Map Error</h3>
+          <h3 className="text-lg font-semibold text-destructive mb-2">Xarita xatosi</h3>
           <p className="text-sm text-muted-foreground">{error}</p>
           <p className="text-xs text-muted-foreground mt-2">
-            Please check your Mapbox configuration
+            Iltimos, Mapbox sozlamalarini tekshiring
           </p>
         </div>
       </div>
@@ -398,15 +398,15 @@ export const Globe = forwardRef<GlobeRef, GlobeProps>(function Globe({ onLocatio
         <div className="absolute inset-0 flex items-center justify-center bg-background z-10">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-            <p className="text-sm text-muted-foreground">Loading globe...</p>
+            <p className="text-sm text-muted-foreground">Globus yuklanmoqda...</p>
           </div>
         </div>
       )}
       <div ref={mapContainerRef} className="w-full h-full" />
       {!marker && (
         <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg">
-          <p className="text-sm font-medium">Click anywhere on the globe to research its history</p>
-          <p className="text-xs text-muted-foreground mt-1">Rotation pauses when you interact</p>
+          <p className="text-sm font-medium">Tarixini oʻrganish uchun globusning istalgan joyini bosing</p>
+          <p className="text-xs text-muted-foreground mt-1">Siz tegsangiz, aylanish toʻxtaydi</p>
         </div>
       )}
     </div>

@@ -705,7 +705,7 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
                     setImages(data.images || []);
                     break;
                   case 'error':
-                    setError(data.error || 'Unknown error');
+                    setError(data.error || 'Nomaʼlum xato');
                     setStatus('error');
                     break;
                   case 'done':
@@ -724,12 +724,12 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
         // Handle auth errors by showing auth modal
         if ((err as any).isAuth) {
           window.dispatchEvent(new CustomEvent('show-auth-modal'));
-          setError(err instanceof Error ? err.message : 'Authentication required');
+          setError(err instanceof Error ? err.message : 'Kirish talab qilinadi');
         } else if ((err as any).isCredit) {
           // Handle credit errors by showing a user-friendly message
-          setError('Insufficient Valyu credits. Add credits at platform.valyu.ai');
+          setError('Valyu kreditlari yetarli emas. platform.valyu.ai saytida kredit qoʻshing');
         } else {
-          setError(err instanceof Error ? err.message : 'Unknown error');
+          setError(err instanceof Error ? err.message : 'Nomaʼlum xato');
         }
         setStatus('error');
       }
@@ -759,7 +759,7 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
           if ((err as any).isAuth) {
             window.dispatchEvent(new CustomEvent('show-auth-modal'));
           }
-          setError(err instanceof Error ? err.message : 'Polling error');
+          setError(err instanceof Error ? err.message : 'Holatni tekshirishda xato');
           setStatus('error');
           setShouldContinuePolling(false);
           if (pollingInterval) {
@@ -902,7 +902,7 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
           >
             <div className="h-full p-4 flex flex-col">
               <div className="flex items-center mb-2">
-                <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Location</div>
+                <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Joylashuv</div>
               </div>
               <div className="flex-1 rounded-lg overflow-hidden border border-border/50 shadow-xl">
                 <Globe
@@ -985,7 +985,7 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
               ) : (
                 <Share2 className="h-4 w-4" />
               )}
-              <span className="hidden sm:inline">{copied ? 'Copied!' : 'Share'}</span>
+              <span className="hidden sm:inline">{copied ? 'Nusxalandi!' : 'Ulashish'}</span>
             </Button>
           )}
           <Button variant="ghost" size="icon" onClick={onClose} className="min-h-11 min-w-11">
@@ -1008,8 +1008,8 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
                   >
                     <Clock className="h-8 w-8 text-yellow-500 mx-auto mb-4" />
                   </motion.div>
-                  <p className="text-sm font-medium mb-1">Research Queued</p>
-                  <p className="text-xs text-muted-foreground">Your request will begin shortly...</p>
+                  <p className="text-sm font-medium mb-1">Tadqiqot navbatda</p>
+                  <p className="text-xs text-muted-foreground">Soʻrovingiz tez orada boshlanadi...</p>
                 </div>
               </div>
             )}
@@ -1058,10 +1058,10 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
                     <div className="flex items-center justify-center py-3 sm:py-4">
                       <div className="text-center">
                         <p className="text-xs sm:text-sm font-light text-foreground/60">
-                          Generating report...
+                          Hisobot tayyorlanmoqda...
                         </p>
                         <p className="text-[10px] sm:text-xs font-light text-foreground/40 mt-1.5">
-                          Reports take roughly 5 minutes. Images and progress will stream in shortly.
+                          Hisobot taxminan 5 daqiqa vaqt oladi. Rasmlar va jarayon tez orada koʻrinadi.
                         </p>
                       </div>
                     </div>
@@ -1072,7 +1072,7 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
                 {timeline.length > 0 && status === 'running' && !content && (
                   <div className="space-y-3 sm:space-y-4" key={`timeline-${messages.length}-${timeline.length}`}>
                     <div className="text-[10px] sm:text-xs font-light text-muted-foreground/60 uppercase tracking-wider">
-                      Research Trace
+                      Tadqiqot jarayoni
                     </div>
                     {timeline.map((item, idx) => (
                       <TimelineItem key={`timeline-${idx}`} item={item} idx={idx} timeline={timeline} animated={true} />
@@ -1084,7 +1084,7 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
 
             {status === 'error' && (
               <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-destructive mb-2">Research Failed</h3>
+                <h3 className="text-lg font-semibold text-destructive mb-2">Tadqiqot amalga oshmadi</h3>
                 <p className="text-sm text-muted-foreground">{error}</p>
               </div>
             )}
@@ -1107,7 +1107,7 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
                     >
                       <div className="flex items-center gap-1.5 sm:gap-2">
                         <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
-                        <span>Research Complete</span>
+                        <span>Tadqiqot yakunlandi</span>
                       </div>
                       {messages && messages.length > 0 && (
                         <Button
@@ -1118,7 +1118,7 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
                           onClick={() => setShowReasoningDialog(true)}
                         >
                           <Brain className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
-                          <span className="text-[10px] sm:text-xs">View Reasoning</span>
+                          <span className="text-[10px] sm:text-xs">Mulohazalarni koʻrish</span>
                         </Button>
                       )}
                     </motion.div>
@@ -1144,7 +1144,7 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
             {/* Images */}
             {images.length > 0 && (
               <div className="space-y-3 sm:space-y-4">
-                <h3 className="text-base sm:text-lg font-semibold">Research Images</h3>
+                <h3 className="text-base sm:text-lg font-semibold">Tadqiqot rasmlari</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                   {images.map((image, index) => (
                     <div key={index} className="border rounded-lg overflow-hidden">
@@ -1171,7 +1171,7 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
             {sources.length > 0 && status === 'completed' && (
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-base sm:text-lg font-semibold">All Sources</h3>
+                  <h3 className="text-base sm:text-lg font-semibold">Barcha manbalar</h3>
                   <span className="text-xs sm:text-sm text-muted-foreground">{sources.length} total</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
@@ -1234,7 +1234,7 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
                     >
                       {metrics.wordsRead.toLocaleString()}
                     </motion.p>
-                    <p className="text-[9px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wide">Words Read</p>
+                    <p className="text-[9px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wide">Oʻqilgan soʻzlar</p>
                   </div>
                   <div className="text-center">
                     <motion.p
@@ -1245,7 +1245,7 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
                     >
                       {metrics.sourcesRead}
                     </motion.p>
-                    <p className="text-[9px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wide">Sources</p>
+                    <p className="text-[9px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wide">Manbalar</p>
                   </div>
                   <div className="text-center">
                     <motion.p
@@ -1256,7 +1256,7 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
                     >
                       {metrics.hoursActuallySaved.toFixed(1)}h
                     </motion.p>
-                    <p className="text-[9px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wide">Time Saved</p>
+                    <p className="text-[9px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wide">Tejalgan vaqt</p>
                   </div>
                 </motion.div>
               );
@@ -1294,7 +1294,7 @@ export function HistoryResearchInterface({ location, onClose, onTaskCreated, ini
           ))
         ) : (
           <div className="text-center py-8 text-muted-foreground">
-            No activity data available for this task.
+            Bu vazifa uchun faoliyat maʼlumotlari yoʻq.
           </div>
         )}
       </ReasoningDialog>

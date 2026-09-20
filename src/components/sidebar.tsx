@@ -182,7 +182,7 @@ export function Sidebar({
           animate={{ opacity: 1, x: 0 }}
           onClick={toggleSidebar}
           className="hidden sm:fixed left-0 top-1/2 -translate-y-1/2 z-50 w-10 h-16 sm:flex items-center justify-center bg-card border-r-2 border-t-2 border-b-2 border-border hover:border-border/80 rounded-r-2xl transition-all duration-200 shadow-lg hover:shadow-xl hover:w-12 group"
-          title="Open Menu"
+          title="Menyuni ochish"
         >
           <svg
             className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors"
@@ -259,14 +259,14 @@ export function Sidebar({
                 >
                   <Image
                     src="/nabla.png"
-                    alt="Home"
+                    alt="Bosh sahifa"
                     width={28}
                     height={28}
                     className="rounded-lg"
                   />
                 </button>
                 <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-popover text-popover-foreground text-sm font-medium rounded-lg opacity-0 group-hover/tooltip:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-50 border border-border shadow-md">
-                  Home
+                  Bosh sahifa
                 </div>
               </div>
 
@@ -283,7 +283,7 @@ export function Sidebar({
                     <Plus className="h-6 w-6 text-muted-foreground group-hover:text-foreground transition-colors" />
                   </button>
                   <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-popover text-popover-foreground text-sm font-medium rounded-lg opacity-0 group-hover/tooltip:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-50 border border-border shadow-md">
-                    New Research
+                    Yangi tadqiqot
                   </div>
                 </div>
               )}
@@ -332,7 +332,7 @@ export function Sidebar({
                     <CreditCard className="h-6 w-6 text-muted-foreground group-hover:text-foreground transition-colors" />
                   </button>
                   <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-popover text-popover-foreground text-sm font-medium rounded-lg opacity-0 group-hover/tooltip:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-50 border border-border shadow-md">
-                    Manage Credits
+                    Kreditlarni boshqarish
                   </div>
                 </div>
               )}
@@ -347,7 +347,7 @@ export function Sidebar({
                     <Building2 className="h-6 w-6 text-muted-foreground group-hover:text-foreground transition-colors" />
                   </button>
                   <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-popover text-popover-foreground text-sm font-medium rounded-lg opacity-0 group-hover/tooltip:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-50 border border-border shadow-md">
-                    Enterprise Solutions
+                    Korporativ yechimlar
                   </div>
                 </div>
               )}
@@ -362,7 +362,7 @@ export function Sidebar({
                     <Globe2 className="h-6 w-6 text-muted-foreground group-hover:text-foreground transition-colors" />
                   </button>
                   <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-popover text-popover-foreground text-sm font-medium rounded-lg opacity-0 group-hover/tooltip:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-50 border border-border shadow-md">
-                    Map Style
+                    Xarita uslubi
                   </div>
                 </div>
               )}
@@ -377,7 +377,7 @@ export function Sidebar({
                     <Settings className="h-6 w-6 text-muted-foreground group-hover:text-foreground transition-colors" />
                   </button>
                   <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-popover text-popover-foreground text-sm font-medium rounded-lg opacity-0 group-hover/tooltip:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-50 border border-border shadow-md">
-                    Settings
+                    Sozlamalar
                   </div>
                 </div>
               )}
@@ -401,7 +401,7 @@ export function Sidebar({
                     </span>
                   </button>
                   <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-popover text-popover-foreground text-sm font-medium rounded-lg opacity-0 group-hover/tooltip:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-50 border border-border shadow-md">
-                    Log in
+                    Kirish
                   </div>
                 </div>
               )}
@@ -423,7 +423,7 @@ export function Sidebar({
                   {/* Only show tooltip when menu is NOT open */}
                   {!showProfileMenu && (
                     <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-popover text-popover-foreground text-sm font-medium rounded-lg opacity-0 group-hover/tooltip:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-50 border border-border shadow-md">
-                      Account
+                      Hisob
                     </div>
                   )}
 
@@ -445,7 +445,7 @@ export function Sidebar({
                         >
                         {/* User Email */}
                         <div className="px-3 py-2.5 mb-1">
-                          <p className="text-xs text-muted-foreground mb-1">Signed in as</p>
+                          <p className="text-xs text-muted-foreground mb-1">Kirgan hisob:</p>
                           <p className="text-sm font-medium text-popover-foreground truncate">
                             {user.email}
                           </p>
@@ -466,7 +466,7 @@ export function Sidebar({
                           className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-red-600 hover:bg-red-500/10 rounded-xl transition-all duration-200"
                         >
                           <LogOut className="h-4 w-4" />
-                          <span className="font-medium">Sign out</span>
+                          <span className="font-medium">Chiqish</span>
                         </button>
                       </motion.div>
                       </>
@@ -499,7 +499,7 @@ export function Sidebar({
                       </svg>
                     </button>
                     <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-popover text-popover-foreground text-sm font-medium rounded-lg opacity-0 group-hover/tooltip:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-50 border border-border shadow-md">
-                      Close
+                      Yopish
                     </div>
                   </div>
                 </>
@@ -537,7 +537,7 @@ export function Sidebar({
               {/* Header */}
               <div className="p-3 sm:p-4 border-b border-border flex-shrink-0">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-base sm:text-lg font-semibold text-card-foreground">Research History</h3>
+                  <h3 className="text-base sm:text-lg font-semibold text-card-foreground">Tadqiqotlar tarixi</h3>
                   <div className="flex items-center gap-1 sm:gap-2">
                     {/* Close button on mobile */}
                     <Button
@@ -545,7 +545,7 @@ export function Sidebar({
                       size="sm"
                       onClick={() => setShowHistory(false)}
                       className="h-9 w-9 p-0 sm:hidden min-h-11 min-w-11"
-                      title="Close"
+                      title="Yopish"
                     >
                       <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -556,7 +556,7 @@ export function Sidebar({
                       size="sm"
                       onClick={handleNewResearch}
                       className="h-9 w-9 p-0 min-h-11 min-w-11"
-                      title="New Research"
+                      title="Yangi tadqiqot"
                     >
                       <Plus className="h-4 w-4" />
                     </Button>
@@ -578,7 +578,7 @@ export function Sidebar({
                 ) : tasks.length === 0 ? (
                   <div className="flex items-center justify-center h-full p-3 sm:p-4">
                     <p className="text-xs sm:text-sm text-muted-foreground text-center">
-                      No research history yet.<br />Click anywhere on the globe to start researching!
+                      Hozircha tadqiqotlar tarixi yoʻq.<br />Tadqiqotni boshlash uchun globusning istalgan joyini bosing!
                     </p>
                   </div>
                 ) : (
@@ -653,7 +653,7 @@ export function Sidebar({
               className="fixed left-0 sm:left-24 top-1/2 -translate-y-1/2 z-50 w-full sm:w-80 max-w-sm bg-popover/95 backdrop-blur-xl border-r sm:border border-border sm:rounded-2xl shadow-2xl p-4 sm:p-6"
             >
               <div className="flex items-center justify-between mb-3 sm:mb-4">
-                <h3 className="text-base sm:text-lg font-semibold text-popover-foreground">Map Style</h3>
+                <h3 className="text-base sm:text-lg font-semibold text-popover-foreground">Xarita uslubi</h3>
                 <button
                   onClick={() => setShowMapStyles(false)}
                   className="sm:hidden p-2 hover:bg-accent rounded-lg min-h-11 min-w-11"
