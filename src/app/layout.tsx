@@ -33,11 +33,11 @@ const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://history.valyu.ai";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "History AI - Explore the History of Any Place | Valyu",
+    default: "History AI - Istalgan joy tarixini kashf eting",
     template: "%s | History AI",
   },
   description:
-    "Explore world history with an interactive 3D globe. Click any location to get AI-powered historical research from academic archives, historical databases, and verified sources. Your personal geography AI for place history search.",
+    "Interaktiv 3D globus orqali jahon tarixini kashf eting. Istalgan joyni bosing va akademik arxivlar, tarixiy maʼlumotlar bazalari va ishonchli manbalar asosida sunʼiy intellekt tayyorlagan tarixiy tadqiqotni oling.",
   applicationName: "History AI",
   keywords: [
     "historical research AI",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     canonical: baseUrl,
   },
   openGraph: {
-    title: "History AI - Explore the History of Any Place | Valyu",
+    title: "History AI - Istalgan joy tarixini kashf eting",
     description:
       "Explore world history with an interactive 3D globe. Click any location to get AI-powered historical research from academic archives, historical databases, and verified sources.",
     url: baseUrl,
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "History AI - Explore the History of Any Place | Valyu",
+    title: "History AI - Istalgan joy tarixini kashf eting",
     description:
       "Explore world history with an interactive 3D globe. Click any location to get AI-powered historical research from academic archives and verified sources.",
     images: ["/history.png"],
@@ -146,7 +146,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="uz" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"

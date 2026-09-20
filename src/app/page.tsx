@@ -47,20 +47,20 @@ function HomeContent() {
     const error = searchParams.get('error');
 
     if (message === 'email_updated') {
-      setNotification({ type: 'success', message: 'Email address successfully updated!' });
+      setNotification({ type: 'success', message: 'Elektron pochta manzili muvaffaqiyatli yangilandi!' });
       router.replace('/');
     } else if (message === 'email_link_expired') {
-      setNotification({ type: 'error', message: 'Email confirmation link has expired. Please request a new email change.' });
+      setNotification({ type: 'error', message: 'Tasdiqlash havolasining muddati tugagan. Iltimos, pochtani oʻzgartirishni qayta soʻrang.' });
       router.replace('/');
     } else if (error === 'auth_failed') {
-      setNotification({ type: 'error', message: 'Authentication failed. Please try again.' });
+      setNotification({ type: 'error', message: 'Kirish amalga oshmadi. Iltimos, qayta urinib koʻring.' });
       router.replace('/');
     }
 
     // Handle checkout success
     const checkoutSuccess = searchParams.get('checkout');
     if (checkoutSuccess === 'success') {
-      setNotification({ type: 'success', message: 'Payment setup successful!' });
+      setNotification({ type: 'success', message: 'Toʻlov muvaffaqiyatli sozlandi!' });
       queryClient.invalidateQueries({ queryKey: ['user-subscription'] });
       router.replace('/');
     }
@@ -155,7 +155,7 @@ function HomeContent() {
           } else {
             // Fallback if task not found
             setSelectedLocation({
-              name: 'Loading research...',
+              name: 'Tadqiqot yuklanmoqda...',
               lat: 0,
               lng: 0,
             });
@@ -163,7 +163,7 @@ function HomeContent() {
         } catch (error) {
           // Fallback on error
           setSelectedLocation({
-            name: 'Loading research...',
+            name: 'Tadqiqot yuklanmoqda...',
             lat: 0,
             lng: 0,
           });
@@ -250,7 +250,7 @@ function HomeContent() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-sm sm:text-base text-primary-foreground/90 font-light tracking-wide drop-shadow-md px-4"
               >
-                Discover the stories behind every place on Earth
+                Yer yuzidagi har bir joy ortidagi hikoyalarni kashf eting
               </motion.p>
             </div>
           </motion.div>
@@ -269,8 +269,8 @@ function HomeContent() {
               className="group relative px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm font-semibold bg-card/90 backdrop-blur-xl text-card-foreground border border-border rounded-full transition-all shadow-xl hover:shadow-2xl hover:bg-card hover:border-border/80 flex items-center gap-1.5 sm:gap-2 md:gap-2.5 min-h-11"
             >
               <Shuffle className="h-3.5 w-3.5 sm:h-4 sm:w-4 group-hover:rotate-180 transition-transform duration-500" />
-              <span className="hidden sm:inline">Random Location</span>
-              <span className="sm:hidden">Random</span>
+              <span className="hidden sm:inline">Tasodifiy joy</span>
+              <span className="sm:hidden">Tasodifiy</span>
             </motion.button>
           </motion.div>
         </header>
@@ -383,7 +383,7 @@ function HomeContent() {
 
 export default function Home() {
   return (
-    <Suspense fallback={<div className="flex h-screen w-full items-center justify-center">Loading...</div>}>
+    <Suspense fallback={<div className="flex h-screen w-full items-center justify-center">Yuklanmoqda...</div>}>
       <HomeContent />
     </Suspense>
   );
