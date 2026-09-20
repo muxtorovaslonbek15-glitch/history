@@ -18,57 +18,57 @@ interface ResearchConfirmationDialogProps {
 const PRESETS = [
   {
     id: 'general',
-    label: 'General',
+    label: 'Umumiy',
     prompt: 'Provide a comprehensive historical overview of this location, covering major events, cultural significance, and key developments throughout history.',
   },
   {
     id: 'wars',
-    label: 'Wars',
+    label: 'Urushlar',
     prompt: 'Focus on wars, battles, and military conflicts that have taken place at this location. Include details about the opposing forces, key battles, strategies, outcomes, and historical impact.',
   },
   {
     id: 'nature',
-    label: 'Nature',
+    label: 'Tabiat',
     prompt: 'Research the natural history and geography of this location, including geological formations, climate history, natural landmarks, ecosystems, and environmental changes over time.',
   },
   {
     id: 'animals',
-    label: 'Wildlife',
+    label: 'Hayvonot dunyosi',
     prompt: 'Focus on the animal life and wildlife of this location, including native species, extinct fauna, conservation efforts, and the relationship between wildlife and human settlement.',
   },
   {
     id: 'people',
-    label: 'People',
+    label: 'Shaxslar',
     prompt: 'Research notable people associated with this location, including historical figures, leaders, artists, scientists, and their contributions to history and culture.',
   },
   {
     id: 'architecture',
-    label: 'Architecture',
+    label: 'Meʼmorchilik',
     prompt: 'Focus on architectural history and significant buildings at this location, including historical structures, architectural styles, construction techniques, and cultural importance.',
   },
   {
     id: 'culture',
-    label: 'Culture',
+    label: 'Madaniyat',
     prompt: 'Research the cultural and artistic heritage of this location, including traditions, customs, art movements, literature, music, and cultural practices throughout history.',
   },
   {
     id: 'economy',
-    label: 'Economy',
+    label: 'Iqtisodiyot',
     prompt: 'Focus on the economic history and trade of this location, including major industries, trade routes, economic developments, and the evolution of commerce.',
   },
   {
     id: 'news',
-    label: 'News',
+    label: 'Yangiliklar',
     prompt: 'Research current and recent news events at this location, including significant political developments, social movements, disasters, celebrations, and noteworthy incidents.',
   },
   {
     id: 'geology',
-    label: 'Geology',
+    label: 'Geologiya',
     prompt: 'Focus on the geological history and features of this location, including rock formations, tectonic activity, volcanic history, erosion patterns, mineral deposits, and the geological forces that shaped the landscape.',
   },
   {
     id: 'culinary',
-    label: 'Culinary',
+    label: 'Oshpazlik',
     prompt: 'Research the culinary history and food culture of this location, including traditional dishes, cooking techniques, local ingredients, food-related traditions, and the evolution of cuisine over time.',
   },
 ];
@@ -149,10 +149,10 @@ export function ResearchConfirmationDialog({
           <div className="flex items-center justify-between p-3 sm:p-4 border-b gap-2">
             <div className="min-w-0 flex-1">
               <h2 className="text-base sm:text-lg font-semibold truncate">
-                Research {location.name}
+                Tadqiqot: {location.name}
               </h2>
               <p className="text-[10px] sm:text-xs text-muted-foreground mt-0.5">
-                Choose a focus or leave blank for general history
+                Yoʻnalishni tanlang yoki umumiy tarix uchun boʻsh qoldiring
               </p>
             </div>
             <button
@@ -168,7 +168,7 @@ export function ResearchConfirmationDialog({
             {/* Preset Pills */}
             <div>
               <label className="block text-[10px] sm:text-xs font-medium text-muted-foreground mb-1.5 sm:mb-2">
-                Quick presets (optional)
+                Tezkor variantlar (ixtiyoriy)
               </label>
               <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {PRESETS.map((preset) => (
@@ -196,7 +196,7 @@ export function ResearchConfirmationDialog({
                 onClick={() => setShowCustom(!showCustom)}
                 className="w-full flex items-center justify-between text-[10px] sm:text-xs font-medium text-muted-foreground hover:text-foreground transition-colors min-h-9"
               >
-                <span>Custom instructions (optional)</span>
+                <span>Qoʻshimcha koʻrsatmalar (ixtiyoriy)</span>
                 <ChevronDown className={`h-3 w-3 transition-transform flex-shrink-0 ${showCustom ? 'rotate-180' : ''}`} />
               </button>
 
@@ -215,7 +215,7 @@ export function ResearchConfirmationDialog({
                         setCustomInstructions(e.target.value);
                         if (e.target.value) setSelectedPreset('');
                       }}
-                      placeholder="e.g., Focus on indigenous peoples before colonization..."
+                      placeholder="masalan, mustamlakachilikdan oldingi mahalliy xalqlarga eʼtibor qarating..."
                       className="min-h-[70px] sm:min-h-[80px] text-xs sm:text-sm resize-none mt-1.5 sm:mt-2"
                     />
                   </motion.div>
@@ -226,7 +226,7 @@ export function ResearchConfirmationDialog({
             {/* Source Exclusions */}
             <div>
               <label className="block text-[10px] sm:text-xs font-medium text-muted-foreground mb-1.5 sm:mb-2">
-                Exclude sources (optional)
+                Manbalarni chiqarib tashlash (ixtiyoriy)
               </label>
               <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-2">
                 <button
@@ -258,7 +258,7 @@ export function ResearchConfirmationDialog({
                   value={excludeUrlInput}
                   onChange={(e) => setExcludeUrlInput(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddExcludeUrl())}
-                  placeholder="Enter domain to exclude... e.g., reddit.com"
+                  placeholder="Chiqariladigan sayt nomini kiriting... masalan, reddit.com"
                   className="flex-1 px-2.5 py-1.5 text-[10px] sm:text-xs rounded-lg border border-border bg-background focus:outline-none focus:ring-1 focus:ring-primary min-h-8"
                 />
                 <Button
@@ -268,7 +268,7 @@ export function ResearchConfirmationDialog({
                   onClick={handleAddExcludeUrl}
                   className="min-h-8 px-2.5 text-[10px] sm:text-xs"
                 >
-                  Add
+                  Qoʻshish
                 </Button>
               </div>
             </div>
@@ -286,7 +286,7 @@ export function ResearchConfirmationDialog({
                   className="w-full font-semibold min-h-11 text-xs sm:text-sm"
                 >
                   <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
-                  <span className="truncate">Continue Without Signup</span>
+                  <span className="truncate">Roʻyxatdan oʻtmasdan davom etish</span>
                 </Button>
                 {onSignUp && (
                   <Button
@@ -294,7 +294,7 @@ export function ResearchConfirmationDialog({
                     size="default"
                     className="w-full font-semibold min-h-11 text-xs sm:text-sm"
                   >
-                    <span className="truncate">Sign Up to Save Research</span>
+                    <span className="truncate">Tadqiqotni saqlash uchun roʻyxatdan oʻting</span>
                   </Button>
                 )}
               </div>
@@ -307,7 +307,7 @@ export function ResearchConfirmationDialog({
                   size="sm"
                   className="min-h-11 text-xs sm:text-sm"
                 >
-                  Cancel
+                  Bekor qilish
                 </Button>
                 <Button
                   onClick={handleConfirm}
@@ -315,7 +315,7 @@ export function ResearchConfirmationDialog({
                   className="px-4 sm:px-6 font-semibold min-h-11 text-xs sm:text-sm"
                 >
                   <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 sm:mr-2" />
-                  <span className="truncate">Start Research</span>
+                  <span className="truncate">Tadqiqotni boshlash</span>
                 </Button>
               </div>
             )}
