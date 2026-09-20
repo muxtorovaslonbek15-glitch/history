@@ -156,6 +156,9 @@ export async function POST(req: Request) {
       researchQuery = `Provide a comprehensive historical overview of this location, covering major events, cultural significance, and key developments throughout history.\n\nLocation: ${location.name}`;
     }
 
+    // Javob toʻliq oʻzbek tilida boʻlishi uchun
+    researchQuery += `\n\nIMPORTANT: Write the entire report (headings, text, summaries) in Uzbek, using Latin script. Keep proper names and original-language terms where needed.`;
+
     // Build search params if excluded sources are specified
     const searchParams = excludedSources && excludedSources.length > 0
       ? { excluded_sources: excludedSources }
