@@ -157,7 +157,7 @@ export async function POST(req: Request) {
     }
 
     // Javob toʻliq oʻzbek tilida boʻlishi uchun
-    researchQuery += `\n\nIMPORTANT: Write the entire report (headings, text, summaries) in Uzbek, using Latin script. Keep proper names and original-language terms where needed.`;
+    researchQuery += `\n\nIMPORTANT: Search in Uzbek first (use Uzbek keywords, prefer Uzbek-language sources such as uz.wikipedia.org). If Uzbek sources are insufficient, use English/international sources and translate the findings. Write the entire report (headings, text, summaries) in Uzbek, using Latin script.`;
 
     // Build search params if excluded sources are specified
     const searchParams = excludedSources && excludedSources.length > 0
@@ -165,19 +165,31 @@ export async function POST(req: Request) {
       : undefined;
 
     // Create DeepResearch task - always use 'fast' model (credits managed by Valyu)
-    const taskResponse = isSelfHosted && !valyuAccessToken
-      ? await callDeepResearchApiDev({
-          input: researchQuery,
-          model: 'fast',
-          output_formats: ['markdown'],
-          ...(searchParams && { search: searchParams })
-        })
-      : await callDeepResearchApi({
-          input: researchQuery,
-          model: 'fast',
-          output_formats: ['markdown'],
-          ...(searchParams && { search: searchParams })
-        }, valyuAccessToken!);
+    const baseBody = {
+      input: researchQuery,
+      model: 'fast',
+      output_formats: ['markdown'],
+      ...(searchParams && { search: searchParams }),
+    };
+    const sendTask = (b: any) =>
+      isSelfHosted && !valyuAccessToken
+        ? callDeepResearchApiDev(b)
+        : callDeepResearchApi(b, valyuAccessToken!);
+
+    // O'zbekcha qidiruv va o'zbekcha hisobot uchun qo'shimcha ko'rsatmalar
+    const uzGuidance = {
+      research_strategy:
+        'Search in Uzbek first: translate the place name and topics into Uzbek (Latin script) and search with Uzbek keywords. Prioritise Uzbek-language sources (for example uz.wikipedia.org, Uzbek encyclopedias, news and educational sites). Uzbek coverage is limited, so when it is thin also use English and other international sources and translate the findings into Uzbek. Do not skip a topic just because it has no Uzbek source.',
+      report_format:
+        'Write the whole report in Uzbek (Latin script): headings, body text, summaries and captions. Use the Uzbek name of places where one exists and give the original-language name in parentheses on first mention. Keep source titles and URLs unchanged.',
+      search: { ...(searchParams || {}), source_biases: { 'uz.wikipedia.org': 5 } },
+    };
+
+    let taskResponse = await sendTask({ ...baseBody, ...uzGuidance });
+    // Agar API bu qo'shimcha maydonlarni qabul qilmasa, oddiy so'rov bilan qayta urinamiz
+    if (taskResponse.status === 400 || taskResponse.status === 422) {
+      taskResponse = await sendTask(baseBody);
+    }
 
     if (!taskResponse.ok) {
       const errorData = await taskResponse.json().catch(() => ({}));
