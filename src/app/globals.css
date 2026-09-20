@@ -228,3 +228,7 @@
   word-break: break-all;
 }
 
+/* Mapbox yozuvli belgisini yashirish (matnli mualliflik ma'lumoti qoladi) */
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}

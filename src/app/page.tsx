@@ -6,7 +6,6 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { track } from '@vercel/analytics';
 import { CheckCircle, AlertCircle, Sparkles, Shuffle } from 'lucide-react';
 import { useQueryClient } from '@tanstack/react-query';
-import Image from 'next/image';
 import { Globe, GlobeTheme } from '@/components/globe';
 import { HistoryResearchInterface } from '@/components/history-research-interface';
 import { AuthModal } from '@/components/auth/auth-modal';
@@ -221,7 +220,7 @@ function HomeContent() {
               >
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight mb-3 sm:mb-4 relative inline-block transition-transform duration-300 ease-out group-hover:-rotate-[5deg]">
                   <span className="font-serif italic bg-gradient-to-br from-primary-foreground via-primary-foreground/95 to-primary-foreground/90 bg-clip-text text-transparent drop-shadow-lg">
-                    History
+                    Tarix
                   </span>
                   <motion.div
                     className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-[2px] bg-gradient-to-r from-transparent via-primary-foreground/60 to-transparent"
@@ -231,18 +230,6 @@ function HomeContent() {
                   />
                 </h1>
 
-                {/* By Valyu Logo - Hidden on mobile, slides out on desktop */}
-                <div className="hidden sm:flex absolute left-full top-1/2 -translate-y-1/2 items-center gap-2.5 ml-4 whitespace-nowrap opacity-0 -translate-x-5 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-0 pointer-events-none">
-                  <span className="text-base md:text-lg text-primary-foreground/70 drop-shadow-md font-light">By</span>
-                  <Image
-                    src="/valyu.svg"
-                    alt="Valyu"
-                    width={140}
-                    height={140}
-                    className="h-8 md:h-10 w-auto opacity-90 drop-shadow-md invert brightness-0 contrast-200"
-                    priority
-                  />
-                </div>
               </motion.div>
               <motion.p
                 initial={{ opacity: 0 }}
